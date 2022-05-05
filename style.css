@@ -26,8 +26,8 @@ body {
 }
 body {
   font-size: 1.6rem;
-
   text-align: center;
+  overflow: overlay;
 }
 
 ul {
@@ -158,11 +158,17 @@ nav.scroll {
   width: 100vw;
 }
 
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 .scroll svg:nth-child(1) path {
   fill: white;
 }
 
-.scroll svg:nth-child(2) path {
+.scroll button path {
   stroke: white;
 }
 
@@ -170,6 +176,10 @@ nav.scroll {
 
 body.menu-expanded {
   overflow: hidden;
+}
+
+body.menu-expanded > :not(nav) {
+  display: none;
 }
 
 .menu,
@@ -203,7 +213,7 @@ body.menu-expanded nav {
   flex-direction: column;
   gap: 4.8rem;
 
-  margin-top: 6rem;
+  margin-top: 12rem;
 
   font-weight: 700;
   font-size: 2.4rem;
@@ -213,6 +223,7 @@ body.menu-expanded nav {
   color: #fff;
   text-decoration: none;
 }
+
 .menu .button {
   background-color: #fff;
   border-radius: 4rem;
@@ -234,7 +245,7 @@ body.menu-expanded nav {
   gap: 3.2rem;
   align-items: center;
   justify-content: center;
-  font-size: 2.4rem;
+  font-size: 3.4rem;
 }
 body.menu-expanded .logo,
 body.menu-expanded button {
